@@ -2000,10 +2000,9 @@ figcaption {
 }
 
 .navbar5_link.w--current:hover {
-  color: #ffffff;;
+  color: #ffffff;
   border-bottom: 1px solid #00b526;
 }
-
 
 .navbar5_logo-link {
   padding-left: 0;
@@ -2075,9 +2074,12 @@ figcaption {
 }
 
 .home_hero-header_image-wrapper {
-  /* flex: 1;
-  position: relative; */
-  aspect-ratio: 16/6.5;
+  height: 60vh;
+}
+@media screen and (max-width: 991px) {
+  .home_hero-header_image-wrapper {
+    aspect-ratio: 16/6.5;
+  }
 }
 
 .home_hero-header_background-image {
