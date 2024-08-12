@@ -2078,7 +2078,9 @@ figcaption {
 }
 @media screen and (max-width: 991px) {
   .home_hero-header_image-wrapper {
-    aspect-ratio: 16/6.5;
+    margin-top: 64px;
+    aspect-ratio: 16/5;
+    height: auto;
   }
 }
 
@@ -4158,6 +4160,24 @@ figcaption {
   height: 100%;
   pointer-events: none; /* Disable interaction */
 }
+
+@media screen and (max-width: 991px) {
+  .video-container {
+    top: 64px;
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+  }
+  .video-container iframe {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Disable interaction */
+  }
+}
+
 .section_home_testimonial {
   position: relative;
 }
