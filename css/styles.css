@@ -4317,3 +4317,34 @@ figcaption {
 .section_home_testimonial .custom-button i {
   font-size: 20px;
 }
+
+.drone-recommend-dis-container{
+
+}
+
+.drone-recommend-dis-container .drone-recommend-dis-icon{
+  align-self: auto;
+}
+
+.drone-recommend-dis{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.drone-recommend-dis img{
+  border-radius: 15px;
+  height: 150px;
+}
+
+.drone-recommend-dis-part{
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.drone-recommend-dis-part img{
+  height: 100px;
+  border-radius: 15px;
+}
