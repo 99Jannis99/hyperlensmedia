@@ -17,6 +17,7 @@ class AdminColorManager {
             // Nur wenn der Benutzer eingeloggt ist
             this.initializeEventListeners();
             this.loadColorSchemes();
+            initializeNavigation();
         } catch (error) {
             this.showLoginMessage();
         }
@@ -176,4 +177,29 @@ class AdminColorManager {
 }
 
 // Globale Instanz erstellen für den Zugriff aus dem HTML
-window.adminColorManager = new AdminColorManager(); 
+window.adminColorManager = new AdminColorManager();
+
+// Navigation Funktionalität
+function initializeNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Aktiven Link aktualisieren
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            
+            // Aktive Section aktualisieren
+            const targetId = link.getAttribute('href').substring(1);
+            sections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === targetId) {
+                    section.classList.add('active');
+                }
+            });
+        });
+    });
+} 
