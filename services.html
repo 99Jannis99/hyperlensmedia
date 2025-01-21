@@ -862,7 +862,7 @@ a,
                   <a href="https://www.absolutenetwork.de" class="margin-bottom margin-small">
                     <img class="margin-bottom margin-small" height="50px" src="images/absolutenetwork.svg"
                       loading="lazy" alt="" />
-                    <div> If you’re looking to create an outstanding website like this one, reach out to Absolute
+                    <div> If you're looking to create an outstanding website like this one, reach out to Absolute
                       Network
                       for
                       professional assistance.</div>
@@ -925,25 +925,16 @@ a,
 
   <script>
     $(document).ready(function () {
-      // $('.drone-garage_faq_question').on('click', function () {
-      //   var $answer = $(this).next('.drone-garage_faq_answer');
-
-      //   if ($answer.height() === 0) {
-      //     $answer.animate({ height: $answer.get(0).scrollHeight }, 200); // animiere die Höhe auf den vollen Inhalt
-      //   } else {
-      //     $answer.animate({ height: 0 }, 200); // animiere die Höhe zurück auf 0
-      //   }
-      // });
       $('.drone-garage_faq_question').on('click', function () {
         var $answer = $(this).next('.drone-garage_faq_answer');
         var $icon = $(this).find('.plus-minus-icon');
 
         if ($answer.height() === 0) {
-          $answer.animate({ height: $answer.get(0).scrollHeight }, 200); // Höhe auf vollen Inhalt animieren
-          $icon.addClass('rotated'); // Plus zu Minus drehen
+          $answer.animate({ height: $answer.get(0).scrollHeight }, 200);
+          $icon.addClass('rotated');
         } else {
-          $answer.animate({ height: 0 }, 200); // Höhe zurück auf 0 animieren
-          $icon.removeClass('rotated'); // Minus zurück zu Plus drehen
+          $answer.animate({ height: 0 }, 200);
+          $icon.removeClass('rotated');
         }
       });
     });
@@ -961,18 +952,20 @@ a,
 
           $menuOverlay.animate({
             height: '100vh'
-          }, 300); // Höhe auf 100% animieren
+          }, 300);
         } else {
           $menuOverlay.animate({
             height: '0'
           }, 300, function () {
-            $menuOverlay.css('display', 'none'); // Nach der Animation display auf none setzen
+            $menuOverlay.css('display', 'none');
           });
         }
       });
     });
   </script>
-  <!-- <script src="js/main.js" type="text/javascript"></script> -->
+  <script type="module">
+    import ColorManager from './js/color-manager.js';
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Hyperlens Media</title>
+    <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/admin.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="login-form-container">
+            <h1>Admin Login</h1>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Passwort:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="button">Anmelden</button>
+                <a href="#" id="forgotPassword" class="forgot-password-link">Passwort vergessen?</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/color-manager.js" type="module"></script>
+    <script type="module">
+        import { supabase } from '../js/supabase-config.js';
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email,
+                    password
+                });
+
+                if (error) throw error;
+
+                // Erfolgreicher Login
+                window.location.href = 'index.html';
+            } catch (error) {
+                console.error('Login fehlgeschlagen:', error);
+                alert('Login fehlgeschlagen');
+            }
+        });
+
+        document.getElementById('forgotPassword').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            if (!email) {
+                alert('Bitte geben Sie Ihre E-Mail-Adresse ein');
+                return;
+            }
+
+            try {
+                const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                    redirectTo: 'http://127.0.0.1:5500/admin/reset-password.html'
+                });
+
+                if (error) throw error;
+
+                alert('Eine E-Mail zum Zurücksetzen des Passworts wurde gesendet');
+            } catch (error) {
+                console.error('Fehler beim Senden der Reset-E-Mail:', error);
+                alert('Fehler beim Senden der Reset-E-Mail');
+            }
+        });
+    </script>
+</body>
+</html> 
