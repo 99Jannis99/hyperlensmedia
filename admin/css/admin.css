@@ -222,3 +222,23 @@ h1 {
 .content-section.active {
     display: block;
 }
+
+.settings-form-container {
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+.settings-form {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+}
+
+.form-help-text {
+    display: block;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+}

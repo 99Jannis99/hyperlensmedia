@@ -48,7 +48,17 @@
             <!-- Allgemein Section -->
             <section id="allgemein" class="content-section active">
                 <h2>Allgemeine Einstellungen</h2>
-                <!-- Hier kommen später die allgemeinen Einstellungen -->
+                
+                <div class="settings-form-container">
+                    <form id="generalSettingsForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="contactEmail">Kontaktformular E-Mail-Adresse:</label>
+                            <input type="email" id="contactEmail" name="contact_email" required>
+                            <small class="form-help-text">An diese E-Mail-Adresse werden die Nachrichten aus dem Kontaktformular gesendet.</small>
+                        </div>
+                        <button type="submit" class="button">Einstellungen speichern</button>
+                    </form>
+                </div>
             </section>
 
             <!-- Farbschema Section -->

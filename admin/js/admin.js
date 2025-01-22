@@ -17,6 +17,7 @@ class AdminColorManager {
             // Nur wenn der Benutzer eingeloggt ist
             this.initializeEventListeners();
             this.loadColorSchemes();
+            this.loadSettings();
             initializeNavigation();
         } catch (error) {
             this.showLoginMessage();
@@ -130,6 +131,25 @@ class AdminColorManager {
         }
     }
 
+    async loadSettings() {
+        try {
+            const { data, error } = await supabase
+                .from('settings')
+                .select('*')
+                .eq('key', 'contact_email')
+                .single();
+
+            if (error && error.code !== 'PGRST116') throw error;
+
+            if (data) {
+                document.getElementById('contactEmail').value = data.value;
+            }
+        } catch (error) {
+            console.error('Fehler beim Laden der Einstellungen:', error);
+            alert('Fehler beim Laden der Einstellungen');
+        }
+    }
+
     initializeEventListeners() {
         const form = document.getElementById('addColorSchemeForm');
         form.addEventListener('submit', async (e) => {
@@ -171,6 +191,33 @@ class AdminColorManager {
             } catch (error) {
                 console.error('Fehler beim Logout:', error);
                 alert('Fehler beim Logout');
+            }
+        });
+
+        // Settings Form Handler
+        const settingsForm = document.getElementById('generalSettingsForm');
+        settingsForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('contactEmail').value;
+
+            try {
+                const { error } = await supabase
+                    .from('settings')
+                    .upsert({ 
+                        key: 'contact_email',
+                        value: email,
+                        updated_at: new Date().toISOString()
+                    }, {
+                        onConflict: 'key'  // Bei Konflikt nach key updaten
+                    });
+
+                if (error) throw error;
+
+                alert('Einstellungen wurden erfolgreich gespeichert');
+            } catch (error) {
+                console.error('Fehler beim Speichern der Einstellungen:', error);
+                alert('Fehler beim Speichern der Einstellungen');
             }
         });
     }

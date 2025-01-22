@@ -2358,7 +2358,9 @@ figcaption {
 }
 
 .success-message {
-  background-color: var(--base-color-neutral--neutral-lightest);
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  margin-top: 1rem;
   padding: 1.5rem;
 }
 
@@ -4377,4 +4379,69 @@ figcaption {
 
 .backend-card-title {
   color: var(--text-color);
+}
+
+/* Checkbox Styling */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    color: var(--text-color);
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 25px;
+    width: 25px;
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: var(--background-color);
+    opacity: 0.8;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    line-height: 1.4;
+    padding-top: 2px;
 }
