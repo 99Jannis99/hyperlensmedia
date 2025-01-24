@@ -48,13 +48,14 @@
             <!-- Allgemein Section -->
             <section id="allgemein" class="content-section active">
                 <h2>Allgemeine Einstellungen</h2>
-                
+
                 <div class="settings-form-container">
                     <form id="generalSettingsForm" class="settings-form">
                         <div class="form-group">
                             <label for="contactEmail">Kontaktformular E-Mail-Adresse:</label>
                             <input type="email" id="contactEmail" name="contact_email" required>
-                            <small class="form-help-text">An diese E-Mail-Adresse werden die Nachrichten aus dem Kontaktformular gesendet.</small>
+                            <small class="form-help-text">An diese E-Mail-Adresse werden die Nachrichten aus dem
+                                Kontaktformular gesendet.</small>
                         </div>
                         <button type="submit" class="button">Einstellungen speichern</button>
                     </form>
@@ -107,7 +108,194 @@
             <!-- Weitere Sections für andere Seiten -->
             <section id="startseite" class="content-section">
                 <h2>Startseite Einstellungen</h2>
-                <!-- Hier kommen die Einstellungen für die Startseite -->
+
+                <h3>Intro & Service Overview</h3>
+                <div class="settings-form-container">
+                    <form id="homePageContentForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="mainHeadline">Hauptüberschrift:</label>
+                            <input type="text" id="mainHeadline" name="main_headline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mainDescription">Hauptbeschreibung:</label>
+                            <textarea id="mainDescription" name="main_description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="primaryButton">Primärer Button Text:</label>
+                            <input type="text" id="primaryButton" name="primary_button" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="secondaryButton">Sekundärer Button Text:</label>
+                            <input type="text" id="secondaryButton" name="secondary_button" required>
+                        </div>
+                        <button type="submit" class="button">Einstellungen speichern</button>
+                    </form>
+                </div>
+
+                <h3>Expertise & Core Services</h3>
+                <div class="settings-form-container">
+                    <form id="homeFeatureForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="subHeadline">Header Subtitle:</label>
+                            <input type="text" id="subHeadline" name="sub_headline" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="secondaryHeadline">Header Title</label>
+                            <input type="text" id="secondaryHeadline" name="secondary_headline" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="featureDescription">Intro Text:</label>
+                            <textarea id="featureDescription" name="feature_description" required></textarea>
+                        </div>
+                        <h5>Service Card 1</h5>
+                        <div class="form-group">
+                            <label for="featureTitle1">Title:</label>
+                            <input type="text" id="featureTitle1" name="feature_title_1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="featureText1">Description:</label>
+                            <textarea id="featureText1" name="feature_text_1" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="featureButton1">Button Text:</label>
+                            <input type="text" id="featureButton1" name="feature_button_1" required>
+                        </div>
+                        <h5>Service Card 2</h5>
+                        <div class="form-group">
+                            <label for="featureTitle2">Title:</label>
+                            <input type="text" id="featureTitle2" name="feature_title_2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="featureText2">Description:</label>
+                            <textarea id="featureText2" name="feature_text_2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="featureButton2">Button Text:</label>
+                            <input type="text" id="featureButton2" name="feature_button_2" required>
+                        </div>
+                        <button type="submit" class="button">Einstellungen speichern</button>
+                    </form>
+                </div>
+
+                <h3>Comprehensive Services Section</h3>
+                <div class="settings-form-container">
+                    <form id="homeServicesForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="servicesSubtitle">Services Subtitle:</label>
+                            <input type="text" id="servicesSubtitle" name="services_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesTitle">Services Title:</label>
+                            <input type="text" id="servicesTitle" name="services_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesDescription">Services Description:</label>
+                            <textarea id="servicesDescription" name="services_description" required></textarea>
+                        </div>
+
+                        <h4>Service 1</h4>
+                        <div class="form-group">
+                            <label for="service1Title">Title:</label>
+                            <input type="text" id="service1Title" name="service_1_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service1Text">Description:</label>
+                            <textarea id="service1Text" name="service_1_text" required></textarea>
+                        </div>
+
+                        <h4>Service 2</h4>
+                        <div class="form-group">
+                            <label for="service2Title">Title:</label>
+                            <input type="text" id="service2Title" name="service_2_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service2Text">Description:</label>
+                            <textarea id="service2Text" name="service_2_text" required></textarea>
+                        </div>
+
+                        <h4>Service 3</h4>
+                        <div class="form-group">
+                            <label for="service3Title">Title:</label>
+                            <input type="text" id="service3Title" name="service_3_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service3Text">Description:</label>
+                            <textarea id="service3Text" name="service_3_text" required></textarea>
+                        </div>
+
+                        <h4>Buttons</h4>
+                        <div class="form-group">
+                            <label for="servicesButton1">Primary Button Text:</label>
+                            <input type="text" id="servicesButton1" name="services_button_1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesButton2">Secondary Button Text:</label>
+                            <input type="text" id="servicesButton2" name="services_button_2" required>
+                        </div>
+
+                        <button type="submit" class="button">Einstellungen speichern</button>
+                    </form>
+                </div>
+
+                <h3>Hiring Section</h3>
+                <div class="settings-form-container">
+                    <form id="homeHiringForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="hiringSubtitle">Subtitle:</label>
+                            <input type="text" id="hiringSubtitle" name="hiring_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hiringTitle">Title:</label>
+                            <input type="text" id="hiringTitle" name="hiring_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hiringDescription">Description:</label>
+                            <textarea id="hiringDescription" name="hiring_description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="hiringButton">Button Text:</label>
+                            <input type="text" id="hiringButton" name="hiring_button" required>
+                        </div>
+                        <button type="submit" class="button">Einstellungen speichern</button>
+                    </form>
+                </div>
+
+                <h3>Testimonials Section</h3>
+                <div class="settings-form-container">
+                    <form id="testimonialsHeaderForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="testimonialsSubtitle">Subtitle:</label>
+                            <input type="text" id="testimonialsSubtitle" name="testimonials_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="testimonialsTitle">Title:</label>
+                            <input type="text" id="testimonialsTitle" name="testimonials_title" required>
+                        </div>
+                        <button type="submit" class="button">Einstellungen speichern</button>
+                    </form>
+                </div>
+
+                <div class="testimonials-management">
+                    <h4>Testimonials verwalten</h4>
+                    
+                    <div class="testimonials-list" id="testimonialsList">
+                        <!-- Testimonials werden hier dynamisch eingefügt -->
+                    </div>
+
+                    <h4>Neues Testimonial hinzufügen</h4>
+                    <form id="addTestimonialForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="testimonialText">Text:</label>
+                            <textarea id="testimonialText" name="testimonial_text" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="testimonialAuthor">Author:</label>
+                            <input type="text" id="testimonialAuthor" name="testimonial_author" required>
+                        </div>
+                        <button type="submit" class="button">Testimonial hinzufügen</button>
+                    </form>
+                </div>
             </section>
 
             <section id="services" class="content-section">
@@ -136,6 +324,8 @@
     <script src="../js/color-manager.js" type="module"></script>
     <script src="js/admin.js" type="module"></script>
     <script src="js/auth-check.js" type="module"></script>
+    <script src="js/content-admin.js" type="module"></script>
+    <script src="js/testimonials-admin.js" type="module"></script>
 </body>
 
 </html>

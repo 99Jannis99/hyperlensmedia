@@ -64,6 +64,11 @@ h1 {
   border-radius: 4px;
 }
 
+.form-group input:focus {
+  border-color: var(--text-color);
+  outline: none;
+}
+
 .form-group .color-box {
   width: 100%;
   padding: 0;
@@ -108,8 +113,8 @@ h1 {
 }
 
 .login-form-container h1 {
-    color: var(--text-color);
-  }
+  color: var(--text-color);
+}
 
 .login-form {
   display: flex;
@@ -129,116 +134,202 @@ h1 {
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .logout-button {
-    background-color: #ff4444;
-    padding: 0.5rem 1rem;
-    border-color: #ff4444;
+  background-color: #ff4444;
+  padding: 0.5rem 1rem;
+  border-color: #ff4444;
 }
 
 .logout-button:hover {
-    background-color: #cc0000;
+  background-color: #cc0000;
 }
 
 .login-message-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    text-align: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  gap: 2rem;
 }
 
 .login-message-container h1 {
-    color: var(--text-color);
-    margin: 0;
+  color: var(--text-color);
+  margin: 0;
 }
 
 .login-redirect-button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .login-redirect-button:hover {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 .admin-nav {
-    background-color: var(--background-color);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: var(--primary-color);
-    color: white;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .nav-link.active {
-    background-color: var(--primary-color);
-    color: white;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .content-sections {
-    background-color: var(--background-color);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .content-section {
-    display: none;
+  display: none;
 }
 
 .content-section.active {
-    display: block;
+  flex-direction: column;
+  display: flex;
+  gap: 2rem;
 }
 
 .settings-form-container {
-    max-width: 600px;
-    margin-top: 2rem;
+  max-width: 600px;
+  margin-bottom: 30px;
 }
 
 .settings-form {
-    background-color: var(--background-color);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--primary-color);
+  background-color: var(--background-color);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
 }
 
 .form-help-text {
-    display: block;
-    color: var(--text-color);
-    opacity: 0.7;
+  display: block;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+}
+
+.settings-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.settings-form textarea:focus {
+  outline: none;
+  border-color: var(--text-color);
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.settings-form .form-group {
+  margin-bottom: 20px;
+}
+
+.settings-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.content-section h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.testimonials-management {
+    margin-top: 2rem;
+}
+
+.testimonials-list {
+    margin: 2rem 0;
+}
+
+.testimonial-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.testimonial-content {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.testimonial-author {
+    font-weight: bold;
     margin-top: 0.5rem;
-    font-size: 0.9em;
+}
+
+.testimonial-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.testimonial-actions .button {
+    padding: 0.5rem 1rem;
+}
+
+.delete-testimonial {
+    background-color: #ff4444;
+    border-color: #ff4444;
+}
+
+.delete-testimonial:hover {
+    background-color: #cc0000;
 }
