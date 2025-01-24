@@ -21,13 +21,13 @@
         <nav class="admin-nav">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="#allgemein" class="nav-link active">Allgemein</a>
+                    <a href="#general" class="nav-link active">General</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#farbschema" class="nav-link">Farbschema</a>
+                    <a href="#colorscheme" class="nav-link">Color Scheme</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#startseite" class="nav-link">Startseite</a>
+                    <a href="#homepage" class="nav-link">Homepage</a>
                 </li>
                 <li class="nav-item">
                     <a href="#services" class="nav-link">Services</a>
@@ -36,7 +36,7 @@
                     <a href="#socials" class="nav-link">Socials</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#kontakt" class="nav-link">Kontakt</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a href="#booking" class="nav-link">Booking</a>
@@ -46,34 +46,33 @@
 
         <div class="content-sections">
             <!-- Allgemein Section -->
-            <section id="allgemein" class="content-section active">
-                <h2>Allgemeine Einstellungen</h2>
+            <section id="general" class="content-section active">
+                <h2>General Settings</h2>
 
                 <div class="settings-form-container">
                     <form id="generalSettingsForm" class="settings-form">
                         <div class="form-group">
-                            <label for="contactEmail">Kontaktformular E-Mail-Adresse:</label>
+                            <label for="contactEmail">Contact Form Email Address:</label>
                             <input type="email" id="contactEmail" name="contact_email" required>
-                            <small class="form-help-text">An diese E-Mail-Adresse werden die Nachrichten aus dem
-                                Kontaktformular gesendet.</small>
+                            <small class="form-help-text">Messages from the contact form will be sent to this email address.</small>
                         </div>
-                        <button type="submit" class="button">Einstellungen speichern</button>
+                        <button type="submit" class="button">Save Settings</button>
                     </form>
                 </div>
             </section>
 
             <!-- Farbschema Section -->
-            <section id="farbschema" class="content-section">
-                <h2>Farbschema-Verwaltung</h2>
+            <section id="colorscheme" class="content-section">
+                <h2>Color Scheme Management</h2>
                 <div class="color-schemes">
-                    <h3>Aktuelle Farbschemas</h3>
+                    <h3>Current Color Schemes</h3>
                     <div id="colorSchemesList" class="color-schemes-list">
                         <!-- Wird dynamisch gefüllt -->
                     </div>
                 </div>
 
                 <div class="add-color-scheme">
-                    <h3>Neues Farbschema hinzufügen</h3>
+                    <h3>Add New Color Scheme</h3>
                     <form id="addColorSchemeForm" class="color-scheme-form">
                         <div class="form-group">
                             <label for="schemeName">Name:</label>
@@ -106,8 +105,8 @@
             </section>
 
             <!-- Weitere Sections für andere Seiten -->
-            <section id="startseite" class="content-section">
-                <h2>Startseite Einstellungen</h2>
+            <section id="homepage" class="content-section">
+                <h2>Homepage Settings</h2>
 
                 <h3>Intro & Service Overview</h3>
                 <div class="settings-form-container">
@@ -277,13 +276,13 @@
                 </div>
 
                 <div class="testimonials-management">
-                    <h4>Testimonials verwalten</h4>
+                    <h4>Manage Testimonials</h4>
                     
                     <div class="testimonials-list" id="testimonialsList">
                         <!-- Testimonials werden hier dynamisch eingefügt -->
                     </div>
 
-                    <h4>Neues Testimonial hinzufügen</h4>
+                    <h4>Add New Testimonial</h4>
                     <form id="addTestimonialForm" class="settings-form">
                         <div class="form-group">
                             <label for="testimonialText">Text:</label>
@@ -308,7 +307,7 @@
                 <!-- Hier kommen die Einstellungen für die Socials-Seite -->
             </section>
 
-            <section id="kontakt" class="content-section">
+            <section id="contact" class="content-section">
                 <h2>Kontakt Einstellungen</h2>
                 <!-- Hier kommen die Einstellungen für die Kontakt-Seite -->
             </section>
@@ -320,10 +319,32 @@
         </div>
     </div>
 
+    <div id="editTestimonialModal" class="modal">
+        <div class="modal-content">
+            <h4>Edit Testimonial</h4>
+            <form id="editTestimonialForm" class="settings-form">
+                <input type="hidden" id="editTestimonialId" name="id">
+                <div class="form-group">
+                    <label for="editTestimonialText">Text:</label>
+                    <textarea id="editTestimonialText" name="text" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editTestimonialAuthor">Author:</label>
+                    <input type="text" id="editTestimonialAuthor" name="author" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="button is-secondary" onclick="document.getElementById('editTestimonialModal').style.display='none'">Cancel</button>
+                    <button type="submit" class="button">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../js/color-manager.js" type="module"></script>
     <script src="js/admin.js" type="module"></script>
     <script src="js/auth-check.js" type="module"></script>
+    <script src="js/toast-manager.js" type="module"></script>
     <script src="js/content-admin.js" type="module"></script>
     <script src="js/testimonials-admin.js" type="module"></script>
 </body>

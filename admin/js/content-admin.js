@@ -1,9 +1,11 @@
 import { supabase } from '../../js/supabase-config.js';
+import toastManager from './toast-manager.js';
 
 class ContentAdmin {
     constructor() {
         this.initializeForms();
         this.loadCurrentContent();
+        this.addLineBreakButtons();
     }
 
     async loadCurrentContent() {
@@ -19,7 +21,7 @@ class ContentAdmin {
                 this.fillForms(data);
             }
         } catch (error) {
-            console.error('Fehler beim Laden der Inhalte:', error);
+            console.error('Error loading content:', error);
         }
     }
 
@@ -91,12 +93,15 @@ class ContentAdmin {
 
             if (error) throw error;
 
-            alert('Inhalte erfolgreich aktualisiert!');
-            window.location.reload();
+            toastManager.show('Content updated successfully!', 'success');
+            
+            if (window.opener) {
+                window.opener.location.reload();
+            }
             
         } catch (error) {
-            console.error('Fehler beim Speichern:', error);
-            alert('Fehler beim Speichern der Inhalte');
+            console.error('Error saving content:', error);
+            toastManager.show('Error saving content', 'error');
         }
     }
 
@@ -109,6 +114,45 @@ class ContentAdmin {
                 form.addEventListener('submit', (e) => this.handleFormSubmit(formId, e));
             }
         });
+    }
+
+    addLineBreakButtons() {
+        const inputs = document.querySelectorAll('input[type="text"], textarea');
+        
+        inputs.forEach(input => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'input-wrapper';
+            
+            input.parentNode.insertBefore(wrapper, input);
+            wrapper.appendChild(input);
+            
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'line-break-button';
+            button.textContent = 'Line Break';
+            button.title = 'Insert a line break at cursor position';
+            
+            wrapper.appendChild(button);
+            
+            button.addEventListener('click', () => this.insertLineBreak(input));
+        });
+    }
+
+    insertLineBreak(input) {
+        // Speichere aktuelle Cursor-Position
+        const start = input.selectionStart;
+        const end = input.selectionEnd;
+        
+        // Füge <br> an der Cursor-Position ein
+        const newValue = input.value.substring(0, start) + '<br>' + input.value.substring(end);
+        input.value = newValue;
+        
+        // Setze Cursor hinter den eingefügten Tag
+        input.selectionStart = start + 4;
+        input.selectionEnd = start + 4;
+        
+        // Fokussiere das Input-Feld wieder
+        input.focus();
     }
 }
 

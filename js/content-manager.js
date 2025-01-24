@@ -26,7 +26,7 @@ class ContentManager {
         contentData.forEach(content => {
             const element = document.querySelector(`[data-content="${content.identifier}"]`);
             if (element) {
-                element.textContent = content.content_text;
+                element.innerHTML = content.content_text;
             }
         });
     }
