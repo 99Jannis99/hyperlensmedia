@@ -71,12 +71,40 @@ class ContentAdmin {
             'hiring_description': 'hiring',
             'hiring_button': 'hiring',
             'testimonials_subtitle': 'testimonials',
-            'testimonials_title': 'testimonials'
+            'testimonials_title': 'testimonials',
+            'services_header_title': 'header',
+            'services_header_description': 'header',
+            'services_header_button': 'header',
+            'services_building_subtitle': 'building',
+            'services_building_title': 'building',
+            'services_building_feature1_title': 'building',
+            'services_building_feature1_text': 'building',
+            'services_building_feature2_title': 'building',
+            'services_building_feature2_text': 'building',
+            'services_building_feature3_title': 'building',
+            'services_building_feature3_text': 'building',
+            'services_customization_subtitle': 'customization',
+            'services_customization_title': 'customization',
+            'services_customization_description': 'customization',
+            'services_repair_subtitle': 'repair',
+            'services_repair_title': 'repair',
+            'services_repair_description': 'repair',
+            'services_repair_feature1_title': 'repair',
+            'services_repair_feature1_text': 'repair',
+            'services_repair_feature2_title': 'repair',
+            'services_repair_feature2_text': 'repair',
+            'services_tuning_subtitle': 'tuning',
+            'services_tuning_title': 'tuning',
+            'services_tuning_description': 'tuning',
+            'services_tuning_feature1_title': 'tuning',
+            'services_tuning_feature1_text': 'tuning',
+            'services_tuning_feature2_title': 'tuning',
+            'services_tuning_feature2_text': 'tuning'
         };
 
         for (let [identifier, content_text] of formData.entries()) {
             updates.push({
-                page: 'home',
+                page: formId.includes('services') ? 'services' : 'home',
                 section: sectionMapping[identifier] || 'header',
                 identifier,
                 content_text
@@ -106,7 +134,19 @@ class ContentAdmin {
     }
 
     initializeForms() {
-        const formIds = ['homePageContentForm', 'homeFeatureForm', 'homeButtonsForm', 'homeServicesForm', 'homeHiringForm', 'testimonialsHeaderForm'];
+        const formIds = [
+            'homePageContentForm', 
+            'homeFeatureForm', 
+            'homeButtonsForm', 
+            'homeServicesForm', 
+            'homeHiringForm', 
+            'testimonialsHeaderForm',
+            'servicesHeaderForm',
+            'servicesBuildingForm',
+            'servicesCustomizationForm',
+            'servicesRepairForm',
+            'servicesTuningForm'
+        ];
         
         formIds.forEach(formId => {
             const form = document.getElementById(formId);

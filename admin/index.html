@@ -298,8 +298,228 @@
             </section>
 
             <section id="services" class="content-section">
-                <h2>Services Einstellungen</h2>
-                <!-- Hier kommen die Einstellungen für die Services-Seite -->
+                <h2>Services Settings</h2>
+                
+                <h3>Header Section</h3>
+                <div class="settings-form-container">
+                    <form id="servicesHeaderForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="servicesHeaderTitle">Header Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesHeaderTitle" name="services_header_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesHeaderDescription">Header Description:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesHeaderDescription" name="services_header_description" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesHeaderButton">Header Button Text:</label>
+                            <input type="text" id="servicesHeaderButton" name="services_header_button" required>
+                        </div>
+                        <button type="submit" class="button">Save Header Settings</button>
+                    </form>
+                </div>
+
+                <h3>Building Section</h3>
+                <div class="settings-form-container">
+                    <form id="servicesBuildingForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="servicesBuildingSubtitle">Subtitle:</label>
+                            <input type="text" id="servicesBuildingSubtitle" name="services_building_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesBuildingTitle">Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesBuildingTitle" name="services_building_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature 1</h4>
+                        <div class="form-group">
+                            <label for="servicesBuildingFeature1Title">Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesBuildingFeature1Title" name="services_building_feature1_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesBuildingFeature1Text">Text:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesBuildingFeature1Text" name="services_building_feature1_text" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature 2</h4>
+                        <div class="form-group">
+                            <label for="servicesBuildingFeature2Title">Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesBuildingFeature2Title" name="services_building_feature2_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesBuildingFeature2Text">Text:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesBuildingFeature2Text" name="services_building_feature2_text" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature 3</h4>
+                        <div class="form-group">
+                            <label for="servicesBuildingFeature3Title">Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesBuildingFeature3Title" name="services_building_feature3_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesBuildingFeature3Text">Text:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesBuildingFeature3Text" name="services_building_feature3_text" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="button">Save Building Section</button>
+                    </form>
+                </div>
+
+                <h3>Customization Section</h3>
+                <div class="settings-form-container">
+                    <form id="servicesCustomizationForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="servicesCustomizationSubtitle">Subtitle:</label>
+                            <input type="text" id="servicesCustomizationSubtitle" name="services_customization_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesCustomizationTitle">Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesCustomizationTitle" name="services_customization_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesCustomizationDescription">Description:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesCustomizationDescription" name="services_customization_description" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="button">Save Customization Section</button>
+                    </form>
+                </div>
+
+                <h3>Repair Section</h3>
+                <div class="settings-form-container">
+                    <form id="servicesRepairForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="servicesRepairSubtitle">Subtitle:</label>
+                            <input type="text" id="servicesRepairSubtitle" name="services_repair_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesRepairTitle">Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesRepairTitle" name="services_repair_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesRepairDescription">Description:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesRepairDescription" name="services_repair_description" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature 1</h4>
+                        <div class="form-group">
+                            <label for="servicesRepairFeature1Title">Title:</label>
+                            <input type="text" id="servicesRepairFeature1Title" name="services_repair_feature1_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesRepairFeature1Text">Text:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesRepairFeature1Text" name="services_repair_feature1_text" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature 2</h4>
+                        <div class="form-group">
+                            <label for="servicesRepairFeature2Title">Title:</label>
+                            <input type="text" id="servicesRepairFeature2Title" name="services_repair_feature2_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesRepairFeature2Text">Text:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesRepairFeature2Text" name="services_repair_feature2_text" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="button">Save Repair Section</button>
+                    </form>
+                </div>
+
+                <h3>Tuning Section</h3>
+                <div class="settings-form-container">
+                    <form id="servicesTuningForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="servicesTuningSubtitle">Subtitle:</label>
+                            <input type="text" id="servicesTuningSubtitle" name="services_tuning_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesTuningTitle">Title:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="servicesTuningTitle" name="services_tuning_title" required>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesTuningDescription">Description:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesTuningDescription" name="services_tuning_description" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature 1</h4>
+                        <div class="form-group">
+                            <label for="servicesTuningFeature1Title">Title:</label>
+                            <input type="text" id="servicesTuningFeature1Title" name="services_tuning_feature1_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesTuningFeature1Text">Text:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesTuningFeature1Text" name="services_tuning_feature1_text" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature 2</h4>
+                        <div class="form-group">
+                            <label for="servicesTuningFeature2Title">Title:</label>
+                            <input type="text" id="servicesTuningFeature2Title" name="services_tuning_feature2_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicesTuningFeature2Text">Text:</label>
+                            <div class="input-wrapper">
+                                <textarea id="servicesTuningFeature2Text" name="services_tuning_feature2_text" required></textarea>
+                                <button type="button" class="line-break-button" title="Insert a line break at cursor position">Line Break</button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="button">Save Tuning Section</button>
+                    </form>
+                </div>
             </section>
 
             <section id="socials" class="content-section">
