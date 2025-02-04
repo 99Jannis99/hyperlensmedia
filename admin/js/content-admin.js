@@ -166,7 +166,21 @@ class ContentAdmin {
             'nav_services': 'navbar',
             'nav_socials': 'navbar',
             'nav_shop': 'navbar',
-            'nav_contact': 'navbar'
+            'nav_contact': 'navbar',
+
+            // Footer mappings
+            'footer_newsletter_text': 'footer',
+            'footer_privacy_notice': 'footer',
+            'footer_pages_title': 'footer',
+            'footer_link_home': 'footer',
+            'footer_link_hire': 'footer',
+            'footer_link_services': 'footer',
+            'footer_link_socials': 'footer',
+            'footer_social_title': 'footer',
+            'footer_copyright': 'footer',
+            'footer_privacy_link': 'footer',
+            'footer_terms_link': 'footer',
+            'footer_cookies_link': 'footer'
         };
 
         for (let [identifier, content_text] of formData.entries()) {
@@ -221,7 +235,8 @@ class ContentAdmin {
             'contactHeaderForm',
             'contactFormSection',
             'contactCtaSection',
-            'navbarForm'
+            'navbarForm',
+            'footerForm'
         ];
         
         formIds.forEach(formId => {

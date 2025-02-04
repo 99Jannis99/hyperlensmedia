@@ -499,8 +499,7 @@ a,
                   </a>
                 </div>
                 <div class="margin-bottom margin-small">
-                  <div>Subscribe to my newsletter for exclusive offers and updates on exciting new drone
-                    builds.</div>
+                  <div data-content="footer_newsletter_text">Subscribe to my newsletter for exclusive offers and updates on exciting new drone builds.</div>
                 </div>
                 <div class="footer1_form-block w-form">
                   <form id="email-form" name="email-form" data-name="Email Form" method="get" class="footer1_form"
@@ -510,8 +509,7 @@ a,
                       id="email-2" required="">
                     <a href="#" class="button is-small w-button">Join</a>
                   </form>
-                  <div class="text-size-tiny margin-bottom margin-small">By subscribing, you agree to our Privacy Policy
-                    and consent to
+                  <div class="text-size-tiny margin-bottom margin-small" data-content="footer_privacy_notice">By subscribing, you agree to our Privacy Policy and consent to
                     receive updates from our company.</div>
                   <div class="success-message w-form-done">
                     <div>Thank you! We&#x27;ve received your submission.</div>
@@ -533,16 +531,16 @@ a,
               <div class="w-layout-grid footer1_menu-wrapper">
                 <div class="footer1_link-list">
                   <div class="margin-bottom margin-xsmall">
-                    <div class="text-weight-semibold">Pages</div>
+                    <div class="text-weight-semibold" data-content="footer_pages_title">Pages</div>
                   </div>
-                  <a href="index.html" aria-current="page" class="footer1_link w--current">Home</a>
-                  <a href="services.html" class="footer1_link">Hire your FPV Pilot</a>
-                  <a href="services.html" class="footer1_link">Builds/Repairs/Tuning</a>
-                  <a href="socials.html" class="footer1_link">Socials</a>
+                  <a href="index.html" class="footer1_link" data-content="footer_link_home">Home</a>
+                  <a href="services.html" class="footer1_link" data-content="footer_link_hire">Hire your FPV Pilot</a>
+                  <a href="services.html" class="footer1_link" data-content="footer_link_services">Builds/Repairs/Tuning</a>
+                  <a href="socials.html" class="footer1_link" data-content="footer_link_socials">Socials</a>
                 </div>
                 <div class="footer1_link-list">
                   <div class="margin-bottom margin-xsmall">
-                    <div class="text-weight-semibold">Follow me</div>
+                    <div class="text-weight-semibold" data-content="footer_social_title">Follow me</div>
                   </div>
                   <a href="https://www.instagram.com/ae0nfpv/" target="_blank"
                     class="footer1_social-link w-inline-block"><img src="images/insta.svg" loading="lazy" alt=""
@@ -567,11 +565,11 @@ a,
           <div class="line-divider"></div>
           <div class="padding-top padding-medium">
             <div class="footer1_bottom-wrapper">
-              <div class="footer1_credit-text">© 2024 AE0N Media. All rights reserved.</div>
+              <div class="footer1_credit-text" data-content="footer_copyright">© 2024 AE0N Media. All rights reserved.</div>
               <div class="w-layout-grid footer1_legal-list">
-                <a href="#" class="footer1_legal-link">Privacy Policy</a>
-                <a href="#" class="footer1_legal-link">Terms of Service</a>
-                <a href="#" class="footer1_legal-link">Cookies Settings</a>
+                <a href="#" class="footer1_legal-link" data-content="footer_privacy_link">Privacy Policy</a>
+                <a href="#" class="footer1_legal-link" data-content="footer_terms_link">Terms of Service</a>
+                <a href="#" class="footer1_legal-link" data-content="footer_cookies_link">Cookies Settings</a>
               </div>
             </div>
           </div>
@@ -644,6 +642,7 @@ a,
     import ColorManager from './js/color-manager.js';
     import BookingContentManager from './js/booking-content-manager.js';
     import NavbarContentManager from './js/navbar-content-manager.js';
+    import FooterContentManager from './js/footer-content-manager.js';
   </script>
 
 </body>
