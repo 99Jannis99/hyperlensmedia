@@ -149,7 +149,16 @@ class ContentAdmin {
             'socials_video1_link': 'socials',
             'socials_video1_embed': 'socials',
             'socials_video2_link': 'socials',
-            'socials_video2_embed': 'socials'
+            'socials_video2_embed': 'socials',
+
+            // Contact page mappings
+            'contact_header_title': 'contact',
+            'contact_header_description': 'contact',
+            'contact_form_subtitle': 'contact',
+            'contact_form_title': 'contact',
+            'contact_form_description': 'contact',
+            'contact_cta_title': 'contact',
+            'contact_cta_description': 'contact'
         };
 
         for (let [identifier, content_text] of formData.entries()) {
@@ -200,7 +209,10 @@ class ContentAdmin {
             'bookingContactForm',
             'socialsHeaderForm',
             'socialsFeaturesForm',
-            'socialsHighlightsForm'
+            'socialsHighlightsForm',
+            'contactHeaderForm',
+            'contactFormSection',
+            'contactCtaSection'
         ];
         
         formIds.forEach(formId => {

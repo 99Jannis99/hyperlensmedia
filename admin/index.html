@@ -656,8 +656,51 @@
             </section>
 
             <section id="contact" class="content-section">
-                <h2>Kontakt Einstellungen</h2>
-                <!-- Hier kommen die Einstellungen für die Kontakt-Seite -->
+                <h2>Contact Settings</h2>
+                <div class="settings-form-container">
+                    <form id="contactHeaderForm" class="settings-form">
+                        <h3>Header Section</h3>
+                        <div class="form-group">
+                            <label for="contactHeaderTitle">Main Headline:</label>
+                            <input type="text" id="contactHeaderTitle" name="contact_header_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactHeaderDescription">Description:</label>
+                            <textarea id="contactHeaderDescription" name="contact_header_description" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+
+                    <form id="contactFormSection" class="settings-form">
+                        <h3>Contact Form Section</h3>
+                        <div class="form-group">
+                            <label for="contactFormSubtitle">Tag Line:</label>
+                            <input type="text" id="contactFormSubtitle" name="contact_form_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactFormTitle">Section Title:</label>
+                            <input type="text" id="contactFormTitle" name="contact_form_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactFormDescription">Description:</label>
+                            <textarea id="contactFormDescription" name="contact_form_description" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+
+                    <form id="contactCtaSection" class="settings-form">
+                        <h3>Call to Action Section</h3>
+                        <div class="form-group">
+                            <label for="contactCtaTitle">CTA Title:</label>
+                            <input type="text" id="contactCtaTitle" name="contact_cta_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactCtaDescription">CTA Description:</label>
+                            <textarea id="contactCtaDescription" name="contact_cta_description" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+                </div>
             </section>
 
             <section id="booking" class="content-section">
