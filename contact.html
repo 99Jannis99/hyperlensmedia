@@ -49,7 +49,7 @@
           <a href="contact.html" class="button is-small w-button" data-content="nav_contact">Contact</a>
         </div>
       </nav>
-      <div class="navbar5_menu-button w-nav-button">
+      <div class="navbar5_menu-button w-nav-button" style="cursor: pointer; z-index: 1000;">
         <div class="menu-icon">
           <div class="menu-icon_line-top"></div>
           <div class="menu-icon_line-middle">
@@ -62,7 +62,7 @@
 
     <div class="w-nav-overlay menu-overlay" data-wf-ignore="" id="w-nav-overlay-0">
       <nav role="navigation" class="navbar5_menu w-nav-menu"
-        style="transition: height 0.5s, transform 400ms; transform: translateY(0px) translateX(0px);"
+        style="transition: height 0.5s, transform 400ms; transform: translateY(0px) translateX(0px); z-index: 999;"
         data-nav-menu-open="">
         <div class="navbar5_menu-left">
           <a href="index.html" id="home" aria-current="page"
@@ -292,6 +292,38 @@
     import ContactContentManager from './js/contact-content-manager.js';
     import NavbarContentManager from './js/navbar-content-manager.js';
     import FooterContentManager from './js/footer-content-manager.js';
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('.navbar5_menu-button').off('click');
+      
+      $('.navbar5_menu-button').on('click', function () {
+        console.log('Menu button clicked');
+        var $menuOverlay = $('.menu-overlay');
+
+        if ($menuOverlay.css('display') === 'none') {
+          $menuOverlay.css({
+            display: 'block',
+            height: '0'
+          });
+
+          $menuOverlay.animate({
+            height: '100vh'
+          }, 300);
+        } else {
+          $menuOverlay.animate({
+            height: '0'
+          }, 300, function () {
+            $menuOverlay.css('display', 'none');
+          });
+        }
+      });
+
+      $('.navbar5_menu-button').css({
+        'pointer-events': 'auto',
+        'cursor': 'pointer'
+      });
+    });
   </script>
 </body>
 
