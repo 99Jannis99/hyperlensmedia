@@ -559,8 +559,100 @@
             </section>
 
             <section id="socials" class="content-section">
-                <h2>Socials Einstellungen</h2>
-                <!-- Hier kommen die Einstellungen für die Socials-Seite -->
+                <h2>Socials Settings</h2>
+                <div class="settings-form-container">
+                    <form id="socialsHeaderForm" class="settings-form">
+                        <h3>Header Section</h3>
+                        <div class="form-group">
+                            <label for="socialsHeaderSubtitle">Tag Line:</label>
+                            <input type="text" id="socialsHeaderSubtitle" name="socials_header_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsHeaderTitle">Main Headline:</label>
+                            <input type="text" id="socialsHeaderTitle" name="socials_header_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsHeaderDescription">Description:</label>
+                            <textarea id="socialsHeaderDescription" name="socials_header_description" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+
+                    <form id="socialsFeaturesForm" class="settings-form">
+                        <h3>Social Media Channels</h3>
+                        <div class="form-group">
+                            <label for="socialsInstagramTitle">Instagram Title:</label>
+                            <input type="text" id="socialsInstagramTitle" name="socials_instagram_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsInstagramText">Instagram Description:</label>
+                            <textarea id="socialsInstagramText" name="socials_instagram_text" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsYoutubeTitle">YouTube Title:</label>
+                            <input type="text" id="socialsYoutubeTitle" name="socials_youtube_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsYoutubeText">YouTube Description:</label>
+                            <textarea id="socialsYoutubeText" name="socials_youtube_text" required></textarea>
+                        </div>
+                        <h4>Social Media Buttons</h4>
+                        <div class="form-group">
+                            <label for="socialsInstagramButton">Instagram Button Text:</label>
+                            <input type="text" id="socialsInstagramButton" name="socials_instagram_button" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsInstagramLink">Instagram Profile URL:</label>
+                            <input type="url" id="socialsInstagramLink" name="socials_instagram_link" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsYoutubeButton">YouTube Button Text:</label>
+                            <input type="text" id="socialsYoutubeButton" name="socials_youtube_button" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsYoutubeLink">YouTube Channel URL:</label>
+                            <input type="url" id="socialsYoutubeLink" name="socials_youtube_link" required>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+
+                    <form id="socialsHighlightsForm" class="settings-form">
+                        <h3>FPV Highlights Section</h3>
+                        <div class="form-group">
+                            <label for="socialsHighlightsTitle">Section Title:</label>
+                            <input type="text" id="socialsHighlightsTitle" name="socials_highlights_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsHighlightsDescription">Section Description:</label>
+                            <textarea id="socialsHighlightsDescription" name="socials_highlights_description" required></textarea>
+                        </div>
+                        
+                        <h4>First Video</h4>
+                        <div class="form-group">
+                            <label for="socialsVideo1Link">Video Link (when clicked):</label>
+                            <input type="url" id="socialsVideo1Link" name="socials_video1_link" required 
+                                placeholder="https://www.youtube.com/watch?v=...">
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsVideo1Embed">YouTube Video ID:</label>
+                            <input type="text" id="socialsVideo1Embed" name="socials_video1_embed" required
+                                placeholder="e.g. kF6S9SSECi8">
+                        </div>
+                        
+                        <h4>Second Video</h4>
+                        <div class="form-group">
+                            <label for="socialsVideo2Link">Video Link (when clicked):</label>
+                            <input type="url" id="socialsVideo2Link" name="socials_video2_link" required
+                                placeholder="https://www.youtube.com/watch?v=...">
+                        </div>
+                        <div class="form-group">
+                            <label for="socialsVideo2Embed">YouTube Video ID:</label>
+                            <input type="text" id="socialsVideo2Embed" name="socials_video2_embed" required
+                                placeholder="e.g. QyyKNLCo2AY">
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+                </div>
             </section>
 
             <section id="contact" class="content-section">

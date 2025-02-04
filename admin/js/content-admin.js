@@ -130,7 +130,26 @@ class ContentAdmin {
             'booking_contact_subtitle': 'booking',
             'booking_contact_title': 'booking',
             'booking_contact_description': 'booking',
-            'booking_contact_button': 'booking'
+            'booking_contact_button': 'booking',
+
+            // Socials page mappings
+            'socials_header_subtitle': 'socials',
+            'socials_header_title': 'socials',
+            'socials_header_description': 'socials',
+            'socials_instagram_title': 'socials',
+            'socials_instagram_text': 'socials',
+            'socials_youtube_title': 'socials',
+            'socials_youtube_text': 'socials',
+            'socials_instagram_button': 'socials',
+            'socials_instagram_link': 'socials',
+            'socials_youtube_button': 'socials',
+            'socials_youtube_link': 'socials',
+            'socials_highlights_title': 'socials',
+            'socials_highlights_description': 'socials',
+            'socials_video1_link': 'socials',
+            'socials_video1_embed': 'socials',
+            'socials_video2_link': 'socials',
+            'socials_video2_embed': 'socials'
         };
 
         for (let [identifier, content_text] of formData.entries()) {
@@ -178,7 +197,10 @@ class ContentAdmin {
             'bookingHeaderForm',
             'bookingFeatureForm',
             'bookingServicesForm',
-            'bookingContactForm'
+            'bookingContactForm',
+            'socialsHeaderForm',
+            'socialsFeaturesForm',
+            'socialsHighlightsForm'
         ];
         
         formIds.forEach(formId => {
