@@ -158,7 +158,15 @@ class ContentAdmin {
             'contact_form_title': 'contact',
             'contact_form_description': 'contact',
             'contact_cta_title': 'contact',
-            'contact_cta_description': 'contact'
+            'contact_cta_description': 'contact',
+
+            // Navbar mappings
+            'nav_home': 'navbar',
+            'nav_booking': 'navbar',
+            'nav_services': 'navbar',
+            'nav_socials': 'navbar',
+            'nav_shop': 'navbar',
+            'nav_contact': 'navbar'
         };
 
         for (let [identifier, content_text] of formData.entries()) {
@@ -212,7 +220,8 @@ class ContentAdmin {
             'socialsHighlightsForm',
             'contactHeaderForm',
             'contactFormSection',
-            'contactCtaSection'
+            'contactCtaSection',
+            'navbarForm'
         ];
         
         formIds.forEach(formId => {
