@@ -10,28 +10,51 @@ class ContentAdmin {
 
     async loadCurrentContent() {
         try {
+            // Lade alle Inhalte auf einmal
             const { data, error } = await supabase
                 .from('page_content')
-                .select('*')
-                .eq('page', 'home');
+                .select('*');
 
             if (error) throw error;
 
             if (data) {
-                this.fillForms(data);
+                // Gruppiere die Daten nach Seiten
+                const groupedData = data.reduce((acc, item) => {
+                    if (!acc[item.page]) {
+                        acc[item.page] = [];
+                    }
+                    acc[item.page].push(item);
+                    return acc;
+                }, {});
+
+                // Fülle die Formulare für jede Seite
+                Object.values(groupedData).forEach(pageData => {
+                    this.fillForms(pageData);
+                });
             }
         } catch (error) {
             console.error('Error loading content:', error);
+            toastManager.show('Error loading content', 'error');
         }
     }
 
     fillForms(contentData) {
         contentData.forEach(content => {
-            const input = document.querySelector(`[name="${content.identifier}"]`);
-            if (input) {
-                input.value = content.content_text;
+            // Suche nach Input/Textarea mit dem entsprechenden Namen
+            const formElement = document.querySelector(`[name="${content.identifier}"]`);
+            if (formElement) {
+                formElement.value = content.content_text || '';
+            }
+
+            // Suche auch nach Elementen mit data-content Attribut
+            const contentElement = document.querySelector(`[data-content="${content.identifier}"]`);
+            if (contentElement) {
+                contentElement.innerHTML = content.content_text || '';
             }
         });
+
+        // Debug-Ausgabe
+        console.log('Loaded content data:', contentData);
     }
 
     async handleFormSubmit(formId, e) {
@@ -42,70 +65,78 @@ class ContentAdmin {
         const updates = [];
 
         const sectionMapping = {
-            'main_headline': 'header',
-            'main_description': 'header',
-            'sub_headline': 'header',
-            'secondary_headline': 'cta',
-            'primary_button': 'cta',
-            'secondary_button': 'cta',
-            'feature_description': 'feature',
-            'feature_title_1': 'feature',
-            'feature_text_1': 'feature',
-            'feature_button_1': 'feature',
-            'feature_title_2': 'feature',
-            'feature_text_2': 'feature',
-            'feature_button_2': 'feature',
-            'services_subtitle': 'services',
-            'services_title': 'services',
-            'services_description': 'services',
-            'service_1_title': 'services',
-            'service_1_text': 'services',
-            'service_2_title': 'services',
-            'service_2_text': 'services',
-            'service_3_title': 'services',
-            'service_3_text': 'services',
-            'services_button_1': 'services',
-            'services_button_2': 'services',
-            'hiring_subtitle': 'hiring',
-            'hiring_title': 'hiring',
-            'hiring_description': 'hiring',
-            'hiring_button': 'hiring',
-            'testimonials_subtitle': 'testimonials',
-            'testimonials_title': 'testimonials',
-            'services_header_title': 'header',
-            'services_header_description': 'header',
-            'services_header_button': 'header',
-            'services_building_subtitle': 'building',
-            'services_building_title': 'building',
-            'services_building_feature1_title': 'building',
-            'services_building_feature1_text': 'building',
-            'services_building_feature2_title': 'building',
-            'services_building_feature2_text': 'building',
-            'services_building_feature3_title': 'building',
-            'services_building_feature3_text': 'building',
-            'services_customization_subtitle': 'customization',
-            'services_customization_title': 'customization',
-            'services_customization_description': 'customization',
-            'services_repair_subtitle': 'repair',
-            'services_repair_title': 'repair',
-            'services_repair_description': 'repair',
-            'services_repair_feature1_title': 'repair',
-            'services_repair_feature1_text': 'repair',
-            'services_repair_feature2_title': 'repair',
-            'services_repair_feature2_text': 'repair',
-            'services_tuning_subtitle': 'tuning',
-            'services_tuning_title': 'tuning',
-            'services_tuning_description': 'tuning',
-            'services_tuning_feature1_title': 'tuning',
-            'services_tuning_feature1_text': 'tuning',
-            'services_tuning_feature2_title': 'tuning',
-            'services_tuning_feature2_text': 'tuning'
+            // Home page mappings
+            'hero_title': 'home',
+            'hero_subtitle': 'home',
+            'about_title': 'home',
+            'about_text': 'home',
+            // ... andere home mappings ...
+
+            // Services page mappings
+            'services_header_title': 'services',
+            'services_header_subtitle': 'services',
+            'services_header_description': 'services',
+            'services_header_button': 'services',
+            'recommendations_title': 'services',
+            'recommendations_description': 'services',
+            'services_building_subtitle': 'services',
+            'services_building_title': 'services',
+            'services_building_description': 'services',
+            'services_building_feature1_title': 'services',
+            'services_building_feature1_text': 'services',
+            'services_building_feature2_title': 'services',
+            'services_building_feature2_text': 'services',
+            'services_customization_subtitle': 'services',
+            'services_customization_title': 'services',
+            'services_customization_description': 'services',
+            'services_customization_feature1_title': 'services',
+            'services_customization_feature1_text': 'services',
+            'services_customization_feature2_title': 'services',
+            'services_customization_feature2_text': 'services',
+            'services_repair_subtitle': 'services',
+            'services_repair_title': 'services',
+            'services_repair_description': 'services',
+            'services_repair_feature1_title': 'services',
+            'services_repair_feature1_text': 'services',
+            'services_repair_feature2_title': 'services',
+            'services_repair_feature2_text': 'services',
+            'services_tuning_subtitle': 'services',
+            'services_tuning_title': 'services',
+            'services_tuning_description': 'services',
+            'services_tuning_feature1_title': 'services',
+            'services_tuning_feature1_text': 'services',
+            'services_tuning_feature2_title': 'services',
+            'services_tuning_feature2_text': 'services',
+
+            // Booking page mappings
+            'booking_header_title': 'booking',
+            'booking_header_description': 'booking',
+            'booking_feature_subtitle': 'booking',
+            'booking_feature_title': 'booking',
+            'booking_feature_description': 'booking',
+            'booking_feature1_title': 'booking',
+            'booking_feature1_text': 'booking',
+            'booking_feature2_title': 'booking',
+            'booking_feature2_text': 'booking',
+            'booking_services_subtitle': 'booking',
+            'booking_services_title': 'booking',
+            'booking_services_description': 'booking',
+            'booking_services_item1_title': 'booking',
+            'booking_services_item1_text': 'booking',
+            'booking_services_item2_title': 'booking',
+            'booking_services_item2_text': 'booking',
+            'booking_services_item3_title': 'booking',
+            'booking_services_item3_text': 'booking',
+            'booking_contact_subtitle': 'booking',
+            'booking_contact_title': 'booking',
+            'booking_contact_description': 'booking',
+            'booking_contact_button': 'booking'
         };
 
         for (let [identifier, content_text] of formData.entries()) {
             updates.push({
-                page: formId.includes('services') ? 'services' : 'home',
-                section: sectionMapping[identifier] || 'header',
+                page: sectionMapping[identifier] || (formId.includes('services') ? 'services' : 'home'),
+                section: 'header',
                 identifier,
                 content_text
             });
@@ -137,15 +168,17 @@ class ContentAdmin {
         const formIds = [
             'homePageContentForm', 
             'homeFeatureForm', 
-            'homeButtonsForm', 
             'homeServicesForm', 
-            'homeHiringForm', 
-            'testimonialsHeaderForm',
             'servicesHeaderForm',
             'servicesBuildingForm',
             'servicesCustomizationForm',
             'servicesRepairForm',
-            'servicesTuningForm'
+            'servicesTuningForm',
+            'recommendationsHeaderForm',
+            'bookingHeaderForm',
+            'bookingFeatureForm',
+            'bookingServicesForm',
+            'bookingContactForm'
         ];
         
         formIds.forEach(formId => {

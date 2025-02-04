@@ -48,7 +48,7 @@
             <!-- Allgemein Section -->
             <section id="general" class="content-section active">
                 <h2>General Settings</h2>
-
+                
                 <div class="settings-form-container">
                     <form id="generalSettingsForm" class="settings-form">
                         <div class="form-group">
@@ -520,6 +520,42 @@
                         <button type="submit" class="button">Save Tuning Section</button>
                     </form>
                 </div>
+
+                <h3>Drone Recommendations</h3>
+                <div class="settings-form-container">
+                    <form id="recommendationsHeaderForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="recommendationsTitle">Title:</label>
+                            <input type="text" id="recommendationsTitle" name="recommendations_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recommendationsDescription">Description:</label>
+                            <textarea id="recommendationsDescription" name="recommendations_description" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Header</button>
+                    </form>
+
+                    <div class="recommendations-list" id="recommendationsList">
+                        <!-- Recommendations werden hier dynamisch eingefügt -->
+                    </div>
+
+                    <h4>Add New Recommendation</h4>
+                    <form id="addRecommendationForm" class="settings-form">
+                        <div class="form-group">
+                            <label for="recommendationTitle">Title:</label>
+                            <input type="text" id="recommendationTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recommendationDescription">Description:</label>
+                            <textarea id="recommendationDescription" name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="recommendationImage">Image URL:</label>
+                            <input type="text" id="recommendationImage" name="image_url" required>
+                        </div>
+                        <button type="submit" class="button">Add Recommendation</button>
+                    </form>
+                </div>
             </section>
 
             <section id="socials" class="content-section">
@@ -533,8 +569,118 @@
             </section>
 
             <section id="booking" class="content-section">
-                <h2>Booking Einstellungen</h2>
-                <!-- Hier kommen die Einstellungen für die Booking-Seite -->
+                <h2>Booking Settings</h2>
+                <div class="settings-form-container">
+                    <form id="bookingHeaderForm" class="settings-form">
+                        <h3>Hero Section</h3>
+                        <div class="form-group">
+                            <label for="bookingHeaderTitle">Main Headline:</label>
+                            <input type="text" id="bookingHeaderTitle" name="booking_header_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingHeaderDescription">Introduction Text:</label>
+                            <textarea id="bookingHeaderDescription" name="booking_header_description" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+
+                    <form id="bookingFeatureForm" class="settings-form">
+                        <h3>Why Choose Me Section</h3>
+                        <div class="form-group">
+                            <label for="bookingFeatureSubtitle">Tag Line:</label>
+                            <input type="text" id="bookingFeatureSubtitle" name="booking_feature_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingFeatureTitle">Section Headline:</label>
+                            <input type="text" id="bookingFeatureTitle" name="booking_feature_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingFeatureDescription">Main Description:</label>
+                            <textarea id="bookingFeatureDescription" name="booking_feature_description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingFeature1Title">First Highlight Title:</label>
+                            <input type="text" id="bookingFeature1Title" name="booking_feature1_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingFeature1Text">First Highlight Description:</label>
+                            <textarea id="bookingFeature1Text" name="booking_feature1_text" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingFeature2Title">Second Highlight Title:</label>
+                            <input type="text" id="bookingFeature2Title" name="booking_feature2_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingFeature2Text">Second Highlight Description:</label>
+                            <textarea id="bookingFeature2Text" name="booking_feature2_text" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+
+                    <form id="bookingServicesForm" class="settings-form">
+                        <h3>Services Overview Section</h3>
+                        <div class="form-group">
+                            <label for="bookingServicesSubtitle">Tag Line:</label>
+                            <input type="text" id="bookingServicesSubtitle" name="booking_services_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingServicesTitle">Section Headline:</label>
+                            <input type="text" id="bookingServicesTitle" name="booking_services_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingServicesDescription">Section Description:</label>
+                            <textarea id="bookingServicesDescription" name="booking_services_description" required></textarea>
+                        </div>
+                        
+                        <h4>Service Types</h4>
+                        <div class="form-group">
+                            <label for="bookingServicesItem1Title">First Service Title:</label>
+                            <input type="text" id="bookingServicesItem1Title" name="booking_services_item1_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingServicesItem1Text">First Service Description:</label>
+                            <textarea id="bookingServicesItem1Text" name="booking_services_item1_text" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingServicesItem2Title">Second Service Title:</label>
+                            <input type="text" id="bookingServicesItem2Title" name="booking_services_item2_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingServicesItem2Text">Second Service Description:</label>
+                            <textarea id="bookingServicesItem2Text" name="booking_services_item2_text" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingServicesItem3Title">Third Service Title:</label>
+                            <input type="text" id="bookingServicesItem3Title" name="booking_services_item3_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingServicesItem3Text">Third Service Description:</label>
+                            <textarea id="bookingServicesItem3Text" name="booking_services_item3_text" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+
+                    <form id="bookingContactForm" class="settings-form">
+                        <h3>Contact Section</h3>
+                        <div class="form-group">
+                            <label for="bookingContactSubtitle">Tag Line:</label>
+                            <input type="text" id="bookingContactSubtitle" name="booking_contact_subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingContactTitle">Section Headline:</label>
+                            <input type="text" id="bookingContactTitle" name="booking_contact_title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingContactDescription">Call to Action Text:</label>
+                            <textarea id="bookingContactDescription" name="booking_contact_description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingContactButton">Button Text:</label>
+                            <input type="text" id="bookingContactButton" name="booking_contact_button" required>
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+                </div>
             </section>
         </div>
     </div>
@@ -560,6 +706,75 @@
         </div>
     </div>
 
+    <div id="editRecommendationModal" class="modal">
+        <div class="modal-content">
+            <h4>Edit Recommendation</h4>
+            <form id="editRecommendationForm" class="settings-form">
+                <input type="hidden" id="editRecommendationId" name="id">
+                <div class="form-group">
+                    <label for="editRecommendationTitle">Title:</label>
+                    <input type="text" id="editRecommendationTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="editRecommendationDescription">Description:</label>
+                    <textarea id="editRecommendationDescription" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editRecommendationImage">Image URL:</label>
+                    <input type="text" id="editRecommendationImage" name="image_url" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="button is-secondary" onclick="document.getElementById('editRecommendationModal').style.display='none'">Cancel</button>
+                    <button type="submit" class="button">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Part Modal -->
+    <div id="addPartModal" class="modal">
+        <div class="modal-content">
+            <h4>Add New Part</h4>
+            <form id="addPartForm" class="settings-form">
+                <input type="hidden" id="addPartRecommendationId" name="recommendation_id">
+                <div class="form-group">
+                    <label for="addPartName">Part Name:</label>
+                    <input type="text" id="addPartName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="addPartImage">Image URL:</label>
+                    <input type="text" id="addPartImage" name="image_url" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="button is-secondary" onclick="document.getElementById('addPartModal').style.display='none'">Cancel</button>
+                    <button type="submit" class="button">Add Part</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Part Modal -->
+    <div id="editPartModal" class="modal">
+        <div class="modal-content">
+            <h4>Edit Part</h4>
+            <form id="editPartForm" class="settings-form">
+                <input type="hidden" id="editPartId" name="id">
+                <div class="form-group">
+                    <label for="editPartName">Part Name:</label>
+                    <input type="text" id="editPartName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPartImage">Image URL:</label>
+                    <input type="text" id="editPartImage" name="image_url" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="button is-secondary" onclick="document.getElementById('editPartModal').style.display='none'">Cancel</button>
+                    <button type="submit" class="button">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../js/color-manager.js" type="module"></script>
     <script src="js/admin.js" type="module"></script>
@@ -567,6 +782,7 @@
     <script src="js/toast-manager.js" type="module"></script>
     <script src="js/content-admin.js" type="module"></script>
     <script src="js/testimonials-admin.js" type="module"></script>
+    <script src="js/recommendations-admin.js" type="module"></script>
 </body>
 
 </html>
